@@ -38,7 +38,48 @@
   box-sizing: border-box;
   margin: 0;
 }
+body{
+  background: #ECECEC;
+}
 .container{
-  background: $primary-color;
+  margin: 0 auto;
+  width: 90%;
+  }
+  header{
+    background: $primary-color;
+    padding: 1em 0;
+    text-align: center;
+
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+
+    a{
+      color: white;
+      text-decoration: none;
+    }
+
+    nav{
+      display: flex;
+
+      ul{
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+      }
+
+      li a{
+        font-weight: normal;
+        padding: 0.5em;
+      }
+    }
+  }
+
+  @media only screen and(min-width:768px) {
+    body{
+      font-size: 18px;
+    }
   }
 </style>
