@@ -2,7 +2,7 @@
   <div>
     <div class="hero">
       <div class="container">
-        <h1>Welcome to Ny Blog</h1>
+        <h1>Welcome to My Blog</h1>
         <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at debitis, est hic
           magni vel?</p>
         <NuxtLink to="/contact" class="hire">Hire me</NuxtLink>
@@ -15,7 +15,8 @@
           <li v-for="(post, index) in posts" :key="index">
             <img src="image.png" alt="">
             <div class="content">
-              <!--              <NuxtLink :to="{path:post.id}">{{post.title}}</NuxtLink>-->
+                            <NuxtLink :to="{path:`${post.id}`}">{{post.title}}</NuxtLink>
+              <p>{{post.id}}</p>
               <p>{{post.body}}</p>
 
             </div>
@@ -90,8 +91,34 @@
       border-radius: 0.5em;
     }
 
-    .content{
+    .content {
       padding: 0.5em;
     }
+
+    a {
+      font-size: 1.5em;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      display: block;
+      margin: -0.1em 0 0.2em;
+    }
+
+    h2{
+      margin-top: 3em;
+      font-size: 0.8em;
+    }
+    span{
+      color: $primary-color;
+    }
+
   }
+  @media only screen and(min-width:768px) {
+    main li{
+      display: grid;
+      grid-template-columns: 180px auto;
+      grid-column-gap: 1em;
+    }
+  }
+
 </style>
